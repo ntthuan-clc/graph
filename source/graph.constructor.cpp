@@ -10,6 +10,11 @@ Graph::Graph() {
         this->visited[i] = false;
     }
 
+    this->parent = new int[nVertex + 1];
+    for (int i = 0; i <= nVertex; ++i) {
+        this->parent[i] = 0;
+    }
+
     this->adjList = new std::vector<int>[nVertex + 1];
 }
 
@@ -22,6 +27,12 @@ Graph::Graph(int nVertex, int nEdge, bool directed) {
     for (int i = 0; i <= nVertex; ++i) {
         this->visited[i] = false;
     }
+
+    this->parent = new int[nVertex + 1];
+    for (int i = 0; i <= nVertex; ++i) {
+        this->parent[i] = 0;
+    }
+
     this->adjList = new std::vector<int>[nVertex + 1];
 }
 
@@ -31,4 +42,7 @@ Graph::~Graph() {
 
     delete[] this->visited;
     this->visited = nullptr;
+
+    delete[] this->parent;
+    this->parent = nullptr;
 }

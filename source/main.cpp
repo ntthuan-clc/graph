@@ -1,3 +1,5 @@
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 #include "../include/graph.h"
 
 int main() {
@@ -18,6 +20,7 @@ int main() {
     g.addEdge(7, 8);
     g.addEdge(8, 9);
 
-    g.dfs(1);
+    g.resetVisited();
+    g.dfs(2, 9);
     return 0;
 }
