@@ -62,6 +62,7 @@
     "compare": "cpp",
     "concepts": "cpp",
     "algorithm": "cpp",
-    "stack": "cpp"
+    "stack": "cpp",
+    "queue": "cpp"
   }
 }

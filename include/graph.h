@@ -4,7 +4,7 @@
 #include <queue>
 #include <stack>
 #include <vector>
-
+const int INF = 1e9 + 7;
 class Graph {
    private:
     int nVertex, nEdge;
@@ -12,7 +12,7 @@ class Graph {
     bool* visited;
     int* parent;
     std::vector<int>* adjList;
-
+    std::vector<std::pair<int, int> >* adjWList;  // have weight
    public:
     Graph();
     Graph(int, int, bool);
@@ -20,7 +20,9 @@ class Graph {
 
     void resetVisited();
     void addEdge(int, int);
-    void showGraph();
+    void addEdge(int, int, int);
+    void showAdjList();
+    void showAdjWList();
     void dfs(int);  // recursion
     void dfsLinear(int);
 
@@ -28,4 +30,6 @@ class Graph {
 
     void bfs(int, int);
     void dfs(int, int);
+    void dijkstra(int, int);
+    void kruskal();
 };
